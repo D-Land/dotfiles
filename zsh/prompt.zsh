@@ -51,7 +51,7 @@ directory_name() {
 }
 
 the_time() {
-  echo "%{$fg_bold[magenta]%}%D{%a %b %e %Y %l:%M%p}%{$reset_color%}"
+  echo "%{$fg_bold[magenta]%}%D{%a %b %e %Y%l:%M%p}%{$reset_color%}"
 }
 
 export PROMPT=$'\n$(the_time) $(directory_name) $(git_dirty)$(need_push)\n› '
