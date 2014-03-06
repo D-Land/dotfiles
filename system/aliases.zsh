@@ -8,3 +8,5 @@ then
   alias l="gls -A -1 --color"
   alias la='gls -A --color'
 fi
+
+alias books="cd ~/Dropbox/books/"
