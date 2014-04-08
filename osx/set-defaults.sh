@@ -40,14 +40,14 @@ defaults write com.apple.dock autohide -bool true
 defaults write com.apple.dock autohide-delay -float 0.0
 
 # Dock icon size
-defaults write com.apple.dock tilesize -integer 18
+defaults write com.apple.dock tilesize -integer 24
 
 ## Mission Control
 # Don't show the dashboard as a space
 defaults write com.apple.dock dashboard-in-overlay -bool true
 
 # Put screen to sleep if we're in the top left corner
-defaults write com.apple.dock wvous-tl-corner -int 3
+defaults write com.apple.dock wvous-tl-corner -int 10
 defaults write com.apple.dock wvous-tl-modifier -int 0
 
 # Set up Safari for development.
