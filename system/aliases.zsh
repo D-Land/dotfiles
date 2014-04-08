@@ -9,5 +9,7 @@ then
   alias la='gls -A --color'
 fi
 
+alias grep="grep --color"
+
 alias books="cd ~/Dropbox/books/"
 alias dotfiles="cd ~/github/d-land/dotfiles"
