@@ -12,6 +12,9 @@ then
   ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)" > /tmp/homebrew-install.log
 fi
 
+# Update homebrew
+brew update
+
 # Install homebrew packages
 brew install grc coreutils spark
 
