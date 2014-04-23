@@ -15,7 +15,26 @@ fi
 # Update homebrew
 brew update
 
+# Tap for brew-cask
+if test ! $(brew tap | grep "phinze/cask")
+then
+  brew tap phinze/cask
+fi
+
 # Install homebrew packages
-brew install grc coreutils spark
+all_formulas=''
+while read formula; do
+  all_formulas=$all_formulas$(echo $formula | tr '\n' ' ')
+done < formulas
+
+brew install $all_formulas
+
+# Install homebrew casks
+all_casks=''
+while read cask; do
+  all_casks=$all_casks$(echo $cask | tr '\n' ' ')
+done < casks
+
+brew cask install $all_casks
 
 exit 0
