@@ -70,5 +70,5 @@ defaults write com.apple.Safari "com.apple.Safari.ContentPageGroupIdentifier.Web
 defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 
 #Kill apps that are effected
-killall Dock
-killall Safari
+killall Dock > /dev/null 2>&1
+killall Safari > /dev/null 2>&1
