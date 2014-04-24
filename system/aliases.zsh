@@ -10,3 +10,4 @@ then
 fi
 
 alias grep="grep --color"
+alias cat="cat -n"
