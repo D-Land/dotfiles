@@ -36,6 +36,10 @@ while read cask; do
     all_casks=$all_casks$(echo $cask | tr '\n' ' ')
   fi
 done < $(dirname "${BASH_SOURCE[0]}")/casks
-brew cask install $all_casks
+#Override default symlink location (which is ~/Applications)
+brew cask install --appdir=/Applications $all_casks
+
+#Link the caskroom to alfred
+brew cask alfred link > /dev/null 2>&1
 
 exit 0
