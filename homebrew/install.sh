@@ -25,7 +25,7 @@ fi
 all_formulas=''
 while read formula; do
   all_formulas=$all_formulas$(echo $formula | tr '\n' ' ')
-done < $(dirname "${BASH_SOURCE[0]}")/formulas
+done < $(dirname "${BASH_SOURCE[0]}")/Brewfile
 brew install $all_formulas
 
 # Install homebrew casks
@@ -35,7 +35,7 @@ while read cask; do
   then
     all_casks=$all_casks$(echo $cask | tr '\n' ' ')
   fi
-done < $(dirname "${BASH_SOURCE[0]}")/casks
+done < $(dirname "${BASH_SOURCE[0]}")/Caskfile
 #Override default symlink location (which is ~/Applications)
 brew cask install --appdir=/Applications $all_casks
 
