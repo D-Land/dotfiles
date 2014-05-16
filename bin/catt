@@ -1,0 +1,2 @@
+#!/bin/sh
+pygmentize -g "$1" | cat -n
