@@ -19,3 +19,5 @@ alias gb='git branch'
 alias gs='git status -sb' # upgrade your git if -sb breaks for you. it's fun.
 alias gg='gs'
 alias gcm='git commit -m'
+alias gmb='git branch -a | grep dl/'
+alias gsf='git show --pretty="format:" --name-only'
