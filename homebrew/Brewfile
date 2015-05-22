@@ -1,11 +1,9 @@
 ack
 brew-cask
-chruby
 coreutils
 grc
 hub
 imagemagick
-ruby-build
 spark
 the_silver_searcher
 vim
