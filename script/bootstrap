@@ -27,6 +27,15 @@ fail () {
   exit
 }
 
+set_default_shell () {
+  if test ! $(echo $SHELL | grep "zsh")
+  then
+    chsh -s `which zsh`
+  fi
+  success "zsh set as default. Close ALL terminals and rerun bootstrap script."
+  exit
+}
+
 setup_gitconfig () {
   if ! [ -f git/gitconfig.symlink ]
   then
@@ -48,7 +57,6 @@ setup_gitconfig () {
     success 'gitconfig'
   fi
 }
-
 
 link_file () {
   local src=$1 dst=$2
@@ -137,6 +145,7 @@ install_dotfiles () {
   done
 }
 
+set_default_shell
 setup_gitconfig
 install_dotfiles
 
