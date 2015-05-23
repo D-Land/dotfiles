@@ -15,10 +15,10 @@ fi
 # Update homebrew
 brew update
 
-# Tap for brew-cask
-if test ! $(brew tap | grep "phinze/cask")
+# Install brew-cask
+if test ! $(brew tap | grep "caskroom/cask")
 then
-  brew tap phinze/cask
+  brew install caskroom/cask/brew-cask
 fi
 
 # Install homebrew packages
