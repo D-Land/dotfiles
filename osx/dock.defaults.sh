@@ -33,7 +33,4 @@ defaults write com.apple.dock wvous-tl-modifier -int 0
 # Speed up expose' animation
 defaults write com.apple.dock expose-animation-duration -float 0.2
 
-# Show battery life percentage
-defaults write com.apple.menuextra.battery ShowPercent -string YES
-
 killall Dock
