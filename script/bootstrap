@@ -27,13 +27,22 @@ fail () {
   exit
 }
 
+install_cmd_line_tools () {
+  if test ! $(xcode-select --install > /dev/null 2>&1)
+  then
+    success "OSX command line tools prompt should now be open."
+    success "Rerun this script after you follow the on screen popup instructions."
+    exit
+  fi
+}
+
 set_default_shell () {
   if test ! $(echo $SHELL | grep "zsh")
   then
     chsh -s `which zsh`
+    success "zsh now set as default shell. Close ALL terminals and rerun bootstrap script."
+    exit
   fi
-  success "zsh set as default. Close ALL terminals and rerun bootstrap script."
-  exit
 }
 
 setup_gitconfig () {
@@ -145,6 +154,7 @@ install_dotfiles () {
   done
 }
 
+install_cmd_line_tools
 set_default_shell
 setup_gitconfig
 install_dotfiles
