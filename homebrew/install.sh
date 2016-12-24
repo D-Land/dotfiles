@@ -15,31 +15,8 @@ fi
 # Update homebrew
 brew update
 
-# Install brew-cask
-if test ! $(brew tap | grep "caskroom/cask")
-then
-  brew install caskroom/cask/brew-cask
-fi
+brew tap homebrew/bundle
 
-# Install homebrew packages
-all_formulas=''
-while read formula; do
-  all_formulas=$all_formulas$(echo $formula | tr '\n' ' ')
-done < $(dirname "${BASH_SOURCE[0]}")/Brewfile
-brew install $all_formulas
-
-# Install homebrew casks
-all_casks=''
-while read cask; do
-  if test ! $(brew cask list | grep $cask)
-  then
-    all_casks=$all_casks$(echo $cask | tr '\n' ' ')
-  fi
-done < $(dirname "${BASH_SOURCE[0]}")/Caskfile
-#Override default symlink location (which is ~/Applications)
-brew cask install --appdir=/Applications $all_casks
-
-#Link the caskroom to alfred
-brew cask alfred link > /dev/null 2>&1
+brew bundle
 
 exit 0

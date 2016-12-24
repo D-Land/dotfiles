@@ -1,9 +1,17 @@
-ack
-brew-cask
-coreutils
-grc
-hub
-imagemagick
-spark
-the_silver_searcher
-vim
+cask_args appdir: '/Applications'
+
+brew ‘ack’
+brew ‘coreutils’
+brew ‘grc’
+brew ‘imagemagick’
+brew ‘the_silver_searcher’
+brew ‘vim’
+
+cask ‘1password’
+cask ‘dropbox’
+cask ‘flux’
+cask ‘google-chrome’
+cask ‘iterm2’
+cask ‘spotify’
+cask ‘vagrant’
+cask ‘virtualbox’
